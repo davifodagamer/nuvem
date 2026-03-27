@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: linear-gradient(to bottom, 
+    #0b1626 0%, 
+    #1a2a4a 35%, 
+    #2c4669 55%, 
+    #1e3a55 68%, 
+    #132b44 100%);
+  height: 100vh;
+  position: relative;
+}
+
+/* Base da paisagem */
+.landscape {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(transparent, #0f241f 80%);
+  z-index: 1;
+}
+
+/* Montanhas - mais realistas */
+.mountain {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 300px solid transparent;
+  border-right: 300px solid transparent;
+  z-index: 2;
+}
+
+.mountain-back {
+  left: -100px;
+  border-bottom: 360px solid #1c2f38;
+  transform: scale(1.05);
+}
+
+.mountain-mid {
+  left: 25%;
+  border-bottom: 390px solid #243a45;
+  transform: scale(0.92);
+  opacity: 0.95;
+}
+
+.mountain-front {
+  right: -120px;
+  border-bottom: 420px solid #2a3f4a;
+  transform: scale(1.1);
+}
+
+/* Nuvem */
+.cloud {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 430px;
+  height: 135px;
+  background: #f0f5fa;
+  border-radius: 100px;
+  z-index: 4;
+  box-shadow: 0 25px 55px rgba(255,255,255,0.7);
+}
+
+.cloud:before,
+.cloud:after {
+  content: '';
+  position: absolute;
+  background: #f0f5fa;
+  border-radius: 50%;
+}
+
+.cloud:before {
+  width: 175px;
+  height: 175px;
+  top: -88px;
+  left: 55px;
+}
+
+.cloud:after {
+  width: 145px;
+  height: 145px;
+  top: -72px;
+  right: 60px;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  pointer-events: none;
+}
